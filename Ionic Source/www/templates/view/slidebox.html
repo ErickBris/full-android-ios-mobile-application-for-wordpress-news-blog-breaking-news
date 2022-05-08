@@ -1,0 +1,22 @@
+<ion-view style="background:#1a1a1a">
+	
+	<div class="bar bar-header bar-stable" style="background:#1a1a1a" ng-init="show=false">
+			<button class="button button-clear icon-arrow" ng-click="comeBack()"></button>
+			<div class="title"><p style="color:white">({{index+1}}/{{src.length}})</p></div>
+			<button class="button button-clear icon-share1" ng-click="show=!show"></button>
+	</div>
+	<ion-slide-box delegate-handle="image-viewer" on-slide-changed="onSlideChange($index)">
+	
+		<ion-slide ng-repeat="x in src track by $index">
+		<div class="slide-share" ng-show="show">
+		<p>Share</p>
+		<p ng-click="bookMarkImage(x.src,idImage)">Bookmark Image</p>
+	</div>
+			<img ng-src="{{x.src}}">
+			<div class="caption-slide">
+			<h3>{{x.title}}</h3>
+			<p>{{x.alt}}</p>
+			</div>
+		</ion-slide>
+	</ion-slide-box>
+</ion-view>

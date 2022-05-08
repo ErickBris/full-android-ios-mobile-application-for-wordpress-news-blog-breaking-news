@@ -1,0 +1,21 @@
+<ion-view>
+<ion-nav-bar class="bar-stable">
+<ion-nav-title>{{'signin' | translate}}</ion-nav-title>
+<ion-nav-buttons side="left"><button class=" button icon-arrow button-clear button-arrow" ng-click="comeBack()"></button></ion-nav-buttons>
+</ion-nav-bar>
+<ion-content>
+<div class="signin">
+	<form name="signin">
+		<span>Email</span>
+		<input type="email" name="email" ng-model="user.name"  placeholder="Enter your email" ng-minlength="2" ng-change="change(user.name)"></input>
+		<span style="color:red" ng-show ="signin.email.$invalid || show1" class="span-erorr">Email invalid</span>
+		<span>Password</span>
+		<input type="passWord" name="pass" ng-model="user.pass" placeholder="Enter your password" ng-minlength="0" ng-change="change1(user.pass)"></input>
+		<span style="color: red" ng-show="show2" class="span-erorr">Password invalid</span>
+		<button class="button button-block button-sign" ng-click="signIn()" ng-disabled="signin.$invalid">Log In</button>
+	</form>
+	<a ng-href="#app/signup"><p style="text-align:center;margin-top: 20px">No account yet? Create one</p></a>
+	<a ng-href="#app/forgotpass"><p style="text-align:center;margin-top:20px">Forgot Password ?</p></a>
+</div>
+</ion-content>
+</ion-view>S

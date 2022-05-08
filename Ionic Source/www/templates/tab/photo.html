@@ -1,0 +1,26 @@
+<div class="slide-box post" ng-repeat="y in dataGallery">
+<div>
+	<a ng-href="#app/slidebox/{{y.id}}"><img ng-src={{y.mobiconnector_feature_image.mobiconnector_large}}></a>
+</div>
+
+	<div class="title">
+			<a ng-href="#app/slidebox/{{y.id}}"><h4 ng-bind-html="y.title.rendered"></h4></a>
+	</div>
+	<div class="start-slideshow"><a ng-href="#app/slidebox/{{y.id}}"><button class="button-icon"><i class="icon-slideshowimage"></i><span>START SLIDESHOW</span></button></div>
+
+</div>
+<div class="photo-post post" >
+	<div ng-repeat="x in topImage">
+	<div class="col-50 item-photo-post" >
+		<div>
+			<a ng-href="#app/slidebox/{{x.id}}"><img ng-src={{x.mobiconnector_feature_image.mobiconnector_large}}></a>
+		</div>
+		<div class="title">
+			<a ng-href="#app/slidebox/{{x.id}}" ><h4 ng-bind-html="x.title.rendered"></h4></a>
+		</div>
+	</div>
+	</div>
+	<div class="clear" ng-if="($index+1)%2==0"></div>
+</div>
+<ion-infinite-scroll ng-if="!over" on-infinite="loadMore()">
+</ion-infinite-scroll>

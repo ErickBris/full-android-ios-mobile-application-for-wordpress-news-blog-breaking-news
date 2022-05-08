@@ -1,0 +1,27 @@
+<ion-view style="background:#f7f7f7">
+	<ion-content class="search" >
+		<div class="no-margin item-input-inset input-search bar bar-header">
+			<i class="icon-arrow" style="padding-right:10px;" ui-sref="app.home"></i>
+			<label class="item-input search">
+				<input type="text" id="search" placeholder="Search for people,topic...." ng-model="q" ng-focus="focus=true" ng-blur="focus=false" focus-me="true" style="border-bottom: none !important">
+			</label>
+			<span style="margin-left:40px" ng-show="q" ng-click="q=''">x</span>
+		</div>
+		<div class="recent-search" ng-show="focus">
+			<ul ng-hide="q">
+				<li><p>RECENT SEARCHES<span ng-click="deleteSearch()">Clear</span></p></li>
+				<li ng-repeat="y in $storage.search  track by $index "><a ng-href="#app/details/{{y.id}}">{{y.name}}</a></li>
+			</ul>
+		</div>
+		<div class="result-search" ng-show="q">
+			<ul>
+				<li ng-repeat="x in data | filter:q as results" ng-click="addRecentSearch(x.title.rendered,x.id)"><i class="icon-search"></i><a ng-href="#app/details/{{x.id}}" ng-bind-html="x.title.rendered"></a></li>
+			</ul>
+		</div>
+		<div class="no-result" ng-if="results.length==0 && focus==true">
+			<p>No Results Availbles</p>
+		</div>
+		<div class="main-result" ng-repeat="z in dataInfo">
+			<p ng-bind-html="z.title.rendered"></p>
+		</div>
+	</ion-content>

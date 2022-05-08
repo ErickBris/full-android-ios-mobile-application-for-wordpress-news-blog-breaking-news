@@ -1,0 +1,14 @@
+<div class="post-video post" ng-repeat="x in topVideo" ng-show="x.mobiconnector_feature_image.mobiconnector_large">
+	<div class="img-video">
+	<div class="button-play"><a ng-href="#app/details/{{x.id}}"><button class="button-icon"><i class="icon-play"></i></button></a></div>
+	<a ng-href="#app/details/{{x.id}}">
+	<img ng-src={{x.mobiconnector_feature_image.mobiconnector_large}}>
+	<img ng-src="img/no_images.png" ng-if="x.mobiconnector_feature_image.mobiconnector_large==null">
+	</a>
+	</div>
+	<div class="title"><a ng-href="#app/details/{{x.id}}"><h4 ng-bind-html="x.title.rendered"></h4></a></div>
+</a>
+</div>
+<ion-infinite-scroll ng-if="!over" on-infinite="loadMore()">
+	</ion-infinite-scroll>
+

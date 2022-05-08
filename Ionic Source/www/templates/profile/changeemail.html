@@ -1,0 +1,17 @@
+<ion-view title="Change Email">
+<ion-nav-bar class="bar-stable nav-profile">
+<ion-nav-buttons side="left"><button class="button button-clear icon-arrow" ui-sref="app.profile"></button></ion-nav-buttons>
+</ion-nav-bar>
+<ion-content>
+	<div class="changemail">
+		<form name="myForm">
+			<input type="email" ng-model="x.emailChange" placeholder="New Email" name="email" ng-change="change2(x.emailChange)"></input>
+			<span  ng-show="show || myForm.email.$invalid" class="span-erorr">Email Invalid</span>
+			<input type="password" ng-model="x.curretpass" placeholder="Current password" ng-change="change(x.curretpass,$scope.show4)"></input>
+			<span  ng-show="show4" class="span-erorr">Password Invalid</span>
+
+			<button class="button button-block" ng-click="changeEmail()">CHANGE</button>
+		</form>
+	</div>
+</ion-content>
+</ion-view>ss

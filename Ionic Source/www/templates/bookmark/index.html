@@ -1,0 +1,25 @@
+<ion-view>
+	<ion-header-bar class="bar bar-header bar-stable bar-bookmark">
+		<button class="button button-clear icon-arrow" ui-sref="app.home"></button>
+		<div class="title">Bookmarks</div>
+		<button class="button button-clear icon-detele" ng-show="showdelete" ng-click="deleteBook()"></button>
+	</ion-header-bar>
+	<link rel="stylesheet" type="text/css" href="css/bookmark.css">
+	<ion-tabs class="tabs-stable tabs-striped tab-bookmark"  delegate-handle="my-tab">
+		<ion-tab title="NEWS"><ion-pane>
+		<ion-content>
+			<div class="padding" ng-include="'templates/bookmark/news.html'"></div>
+		</ion-content>
+		</ion-pane></ion-tab>
+		<ion-tab title="PHOTO"><ion-pane>
+		<ion-content>
+			<div class="padding" ng-include="'templates/bookmark/photo.html'"></div>
+		</ion-content>
+		</ion-pane></ion-tab>
+		<ion-tab title="VIDEO"><ion-pane>
+		<ion-content>
+			<div class="padding" ng-include="'templates/bookmark/video.html'"></div>
+		</ion-content>
+		</ion-pane></ion-tab>
+	</ion-tabs>
+</ion-view>
